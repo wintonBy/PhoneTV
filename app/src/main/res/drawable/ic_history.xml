@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportHeight="24.0"
+    android:viewportWidth="24.0">
+
+    <path
+        android:fillColor="#fff"
+        android:name="history"
+        android:pathData="M22,11
+                          c 0-6.075-4.925-11-11-11
+                          C4.925,0,0,4.925,0,11
+                          c0,6.075,4.925,11,11,11
+		                  C17.075,22,22,17.075,22,11z
+		                  M1,11C1,5.477,5.477,1,11,1
+		                  c5.523,0,10,4.477,10,10
+		                  s-4.477,10-10,10
+		                  C5.477,21,1,16.523,1,11z"/>
+</vector>

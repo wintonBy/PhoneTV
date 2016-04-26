@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/navigation_head"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/user_default"
+
+        />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/navigation_head"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/click_head_login"
+            android:visibility="gone"
+            android:id="@+id/tv_navigation_head_hint"
+            />
+        <FrameLayout
+            android:paddingLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/level"
+                />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:paddingLeft="20dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/watch_time"
+                />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<resources>
+
+    <attr name="rootViewBg" format="reference|color"/>
+    <attr name="titleBg" format="color"/>
+    <attr name="buttonBg" format="color"/>
+    <attr name="textColor" format="reference|color"/>
+    <attr name="buttonTextColor" format="color"/>
+
+</resources>

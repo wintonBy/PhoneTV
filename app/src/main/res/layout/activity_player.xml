@@ -1,0 +1,31 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- The main content view -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0099cc">
+
+        <com.winton.player.widget.media.IjkVideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center">
+
+        </com.winton.player.widget.media.IjkVideoView>
+
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/tv_video_path"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="URL"
+        />
+
+</LinearLayout>
