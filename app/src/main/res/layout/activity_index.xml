@@ -15,7 +15,7 @@
                <android.support.v7.widget.Toolbar
                    android:id="@+id/index_toolbar"
                    android:layout_width="match_parent"
-                   app:title="@string/wasu_tv"
+                   app:title="@string/app_name"
                    app:navigationIcon="@drawable/ic_menu"
                    android:layout_height="?attr/actionBarSize">
 
@@ -52,6 +52,7 @@
        android:layout_gravity="start"
        app:headerLayout="@layout/navigation_header"
        app:menu="@menu/navigation_menu"
+       android:background="#36383B"
        android:layout_height="match_parent">
 
    </android.support.design.widget.NavigationView>

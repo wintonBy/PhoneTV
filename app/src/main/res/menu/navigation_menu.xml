@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group >
+
         <item
             android:id="@+id/nav_home"
-            android:title="Home"/>
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
         <item
-            android:id="@+id/nav_messages"
-            android:title="Messages"/>
-        <item
-            android:id="@+id/nav_friends"
-            android:title="Friends"/>
-        <item
-            android:id="@+id/nav_discussion"
-            android:title="Discussion"/>
+            android:id="@+id/nav_recommend"
+            android:title="@string/recommend" />
+
     </group>
 
-    <item android:title="Sub items">
-        <menu>
-            <item
-                android:title="Sub item 1"/>
-            <item
-                android:title="Sub item 2"/>
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_person"
+        android:title="@string/person_center" />
 
+    <group>
+        <item
+            android:id="@+id/nav_offline_save"
+            android:title="@string/offline_save" />
+        <item
+            android:id="@+id/nav_watch_history"
+            android:title="@string/watch_history" />
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/nav_settings"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="@string/about"/>
+    </group>
 
 </menu>

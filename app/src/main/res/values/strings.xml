@@ -20,6 +20,11 @@
     <string name="watch_people">%d人</string>
     <string name="username_or_passwd_error">用户名或密码错误</string>
     <string name="login_success">登录成功</string>
+    <string name="person_center">个人中心</string>
+    <string name="offline_save">离线缓存</string>
+    <string name="watch_history">观看历史</string>
+    <string name="settings">设置</string>
+    <string name="about">关于</string>
 
     <string name="video">Video</string>
 
