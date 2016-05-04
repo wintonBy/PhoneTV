@@ -25,6 +25,10 @@
     <string name="watch_history">观看历史</string>
     <string name="settings">设置</string>
     <string name="about">关于</string>
+    <string name="version_explain">版本说明</string>
+    <string name="open_source_explain">开源说明</string>
+    <string name="bug_report">问题反馈</string>
+    <string name="team_info">团队介绍</string>
 
     <string name="video">Video</string>
 

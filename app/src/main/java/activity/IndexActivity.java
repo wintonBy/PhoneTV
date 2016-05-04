@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -58,14 +59,25 @@ public class IndexActivity extends WstvBaseActivity implements View.OnClickListe
         initTabLayout(mTabLayout);
 
         mViewPager = (ViewPager)findViewById(R.id.index_viewpager);
-
-
     }
 
     @Override
     public void initListener() {
         mNavigationViewHead.setOnClickListener(this);
         mDrawerLayout.addDrawerListener(new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.drawer_open,R.string.drawer_close));
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_about:
+                        Intent aboutIntent = new Intent(IndexActivity.this,AboutActivity.class);
+                        startActivity(aboutIntent);
+                        break;
+
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -75,6 +87,7 @@ public class IndexActivity extends WstvBaseActivity implements View.OnClickListe
         pagerAdapter.add(homeFragment);
         mViewPager.setAdapter(pagerAdapter);
 
+        new Thread(mRun).start();
     }
 
     @Override
@@ -102,5 +115,29 @@ public class IndexActivity extends WstvBaseActivity implements View.OnClickListe
         tabLayout.addTab(tabLayout.newTab().setText(R.string.recommend));
     }
 
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        return super.onMenuItemSelected(featureId, item);
+    }
+
+    Runnable mRun = new Runnable() {
+        @Override
+        public void run() {
+            while (true){
+                Intent intent = new Intent();
+                // 设置Intent的Action属性
+                intent.setAction("com.winton.test");
+                intent.putExtra("msg" , "简单的消息");
+                // 发送广播
+                sendBroadcast(intent);
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    };
 
 }
