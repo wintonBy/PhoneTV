@@ -14,6 +14,7 @@ import com.wasu.winton.phonetv.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import activity.IndexActivity;
 import activity.PlayerActivity;
 import adapter.HomeAdapter;
 import bean.HomeItem;
@@ -27,6 +28,8 @@ import bean.MediaIntro;
  */
 public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickEventListener{
 
+    private static final String TAG = "HomeFragment";
+
     private RecyclerView mRecyclerView = null;
 
     private HomeAdapter adapter = null;
@@ -38,6 +41,8 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
         View view = inflater.inflate(R.layout.frament_home,container,false);
         mRecyclerView = (RecyclerView)view.findViewById(R.id.home_recyclerView);
         initData();
+        initListener();
+        ((IndexActivity)getActivity()).foldToolbar();
         return view;
     }
 
@@ -84,6 +89,27 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
 
     }
 
+    private void initListener(){
+       mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+           @Override
+           public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+               switch (newState){
+                   case RecyclerView.SCROLL_STATE_IDLE:
+                       //停止滚动时
+                       break;
+                   case RecyclerView.SCROLL_STATE_SETTLING:
+                       //惯性滚动时
+                       break;
+                   case RecyclerView.SCROLL_STATE_DRAGGING:
+                       //在手滑动时
+                       break;
+               }
+           }
+       });
+
+    }
+
+
     @Override
     public void onHeadViewClick(MediaIntro mediaIntro) {
 
@@ -101,4 +127,6 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
     public void onContentViewClick(HomeItemContent item) {
 
     }
+
+
 }

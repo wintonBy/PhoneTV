@@ -1,5 +1,6 @@
 package activity;
 
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -26,8 +27,6 @@ public class LoginActivity extends WstvBaseActivity implements View.OnClickListe
         mETUsername = (TextInputEditText)findViewById(R.id.login_et_username);
         mETPasswd = (TextInputEditText)findViewById(R.id.login_et_password);
         mBTLogin = (Button)findViewById(R.id.login_ib_login);
-
-
 
     }
 
@@ -82,9 +81,14 @@ public class LoginActivity extends WstvBaseActivity implements View.OnClickListe
     public void onClick(View v) {
 
         if(v == mBTLogin){
-            boolean isOk = checkUserInfo(mETUsername.getText().toString(),mETPasswd.getText().toString());
+            String username = mETUsername.getText().toString().trim();
+            String password = mETPasswd.getText().toString().trim();
+            boolean isOk = checkUserInfo(username,password);
             if(isOk){
                 ToastUtil.showSuccessMsg(R.string.login_success);
+                Intent intent = new Intent(this,IndexActivity.class);
+                startActivity(intent);
+                this.finish();
             }else {
                 ToastUtil.showErrorMsg(R.string.username_or_passwd_error);
             }

@@ -27,6 +27,8 @@ public class BaseApplication extends Application {
         initImageLoader();
     }
 
+
+
     /**
      * 初始化imageLoader
      */

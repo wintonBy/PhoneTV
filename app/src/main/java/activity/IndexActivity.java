@@ -140,4 +140,10 @@ public class IndexActivity extends WstvBaseActivity implements View.OnClickListe
         }
     };
 
+    public void foldToolbar(){
+        if(mToolBar != null){
+            mToolBar.hideOverflowMenu();
+        }
+    }
+
 }
