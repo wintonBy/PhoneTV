@@ -3,11 +3,11 @@
 
 # Index
 
-[此处输入图片的描述](PhoneTV/屏幕截图/index.png)
+[PhoneTV/屏幕截图/index.png](PhoneTV/屏幕截图/index.png)
 
 # Login
 
-[此处输入图片的描述](PhoneTV/屏幕截图/login.png)
+[PhoneTV/屏幕截图/login.png](PhoneTV/屏幕截图/login.png)
 # About
 
-[此处输入图片的描述](PhoneTV/屏幕截图/about.png)
+[http://images.17173.com/2012/news/2012/09/27/lj0927dm13s.jpg](http://images.17173.com/2012/news/2012/09/27/lj0927dm13s.jpg)
