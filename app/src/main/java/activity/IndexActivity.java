@@ -136,13 +136,17 @@ public class IndexActivity extends WstvBaseActivity implements View.OnClickListe
                     e.printStackTrace();
                 }
             }
-
         }
     };
 
-    public void foldToolbar(){
-        if(mToolBar != null){
-            mToolBar.hideOverflowMenu();
+    public void hideToolbar(){
+        if(mToolBar != null && mToolBar.isShown()){
+            mToolBar.setVisibility(View.GONE);
+        }
+    }
+    public void showToolbar(){
+        if(mToolBar != null && !mToolBar.isShown()){
+            mToolBar.setVisibility(View.VISIBLE);
         }
     }
 
