@@ -3,11 +3,11 @@
 
 # Index
 
-[!image](http://github.com/wintonBy/PhoneTV/raw/master/屏幕截图/index.png)
+![image](http://github.com/wintonBy/PhoneTV/raw/master/屏幕截图/index.png)
 
 # Login
 
-[!image](http://github.com/wintonBy/PhoneTV/raw/master/屏幕截图/login.png)
+![image](http://github.com/wintonBy/PhoneTV/raw/master/屏幕截图/login.png)
 # About
 
-[!image](http://github.com/wintonBy/PhoneTV/raw/master/屏幕截图/about.png)
+![image](http://github.com/wintonBy/PhoneTV/raw/master/屏幕截图/about.png)
