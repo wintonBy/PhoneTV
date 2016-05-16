@@ -42,7 +42,6 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
         mRecyclerView = (RecyclerView)view.findViewById(R.id.home_recyclerView);
         initData();
         initListener();
-        ((IndexActivity)getActivity()).foldToolbar();
         return view;
     }
 
@@ -103,6 +102,15 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
                    case RecyclerView.SCROLL_STATE_DRAGGING:
                        //在手滑动时
                        break;
+               }
+           }
+
+           @Override
+           public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+               if(dy>10){
+                   ((IndexActivity)getActivity()).hideToolbar();
+               }else if(dy <10) {
+                   ((IndexActivity)getActivity()).showToolbar();
                }
            }
        });
