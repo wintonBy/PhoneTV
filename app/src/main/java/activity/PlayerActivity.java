@@ -3,6 +3,8 @@ package activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.TabLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,6 +24,10 @@ public class PlayerActivity extends WstvBaseActivity  {
     private IjkVideoView mVideoView = null;
     private TextView mToastTextView = null;
     private AndroidMediaController mMediaController = null;
+    private Toolbar mToolBar;
+    private TabLayout mTabLayout;
+
+
 
     private TextView mTVPath = null;
 
@@ -44,7 +50,6 @@ public class PlayerActivity extends WstvBaseActivity  {
 
     static {
         IjkMediaPlayer.loadLibrariesOnce(null);
-
         IjkMediaPlayer.native_profileBegin("libijkplayer.so");
     }
 
@@ -56,6 +61,13 @@ public class PlayerActivity extends WstvBaseActivity  {
         mVideoView = (IjkVideoView) findViewById(R.id.video_view);
         mVideoView.setMediaController(mMediaController);
         mTVPath = (TextView)findViewById(R.id.tv_video_path);
+
+           /*初始化ToolBar*/
+        mToolBar = (Toolbar)findViewById(R.id.toolbar);
+        mToolBar.setNavigationIcon(R.drawable.ic_back);
+
+        mTabLayout = (TabLayout)findViewById(R.id.tablayout);
+        mTabLayout.setVisibility(View.GONE);
 
         mVideoView.setVideoPath("storage/emulated/legacy/Download/1.mp4");
         mVideoView.start();

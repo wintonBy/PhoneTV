@@ -1,8 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+    <include layout="@layout/layout_appbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/iv_person_center_header_bg"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="matrix"
+            android:src="@mipmap/head_bg" />
+
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:id="@+id/circular_iv_person_center_user"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="110dp"
+            android:src="@mipmap/user_default" />
+
+        <Button
+            android:id="@+id/bt_person_center_person_info"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/iv_person_center_header_bg"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/person_info" />
+
+        <TextView
+            android:id="@+id/tv_person_center_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/circular_iv_person_center_user"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/tv_person_center_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_person_center_name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/attention" />
+
+        <TextView
+            android:id="@+id/tv_person_center_fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_person_center_name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/tv_person_center_attention"
+            android:text="@string/fans" />
+        <LinearLayout
+            android:layout_marginTop="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            >
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
 
 </LinearLayout>

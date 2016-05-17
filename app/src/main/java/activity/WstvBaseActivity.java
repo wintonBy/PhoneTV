@@ -72,5 +72,5 @@ public abstract class WstvBaseActivity extends FragmentActivity {
         NetworkState = NetworkStateTools.getNetworkType(this);
     }
 
-
+//
 }

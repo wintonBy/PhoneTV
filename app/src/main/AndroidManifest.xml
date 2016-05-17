@@ -48,6 +48,7 @@
         <activity android:name="activity.GuideActivity"/>
         <activity android:name="activity.PlayerActivity"/>
         <activity android:name="activity.AboutActivity"/>
+        <activity android:name="activity.PersonCenterActivity"/>
 
     </application>
 

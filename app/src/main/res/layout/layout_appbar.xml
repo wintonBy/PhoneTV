@@ -1,0 +1,25 @@
+<android.support.design.widget.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:title="@string/title"
+        app:navigationIcon="@drawable/ic_menu"
+        android:layout_height="?attr/actionBarSize">
+    </android.support.v7.widget.Toolbar>
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tablayout"
+        android:isScrollContainer="true"
+        app:tabMinWidth="100dp"
+        app:tabIndicatorColor="@android:color/holo_red_light"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@android:color/darker_gray"
+        >
+    </android.support.design.widget.TabLayout>
+</android.support.design.widget.AppBarLayout>

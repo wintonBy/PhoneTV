@@ -40,4 +40,9 @@
     <color name="black_54">#89000000</color>
     <color name="black_26">#42000000</color>
 
+    <color name="blue_100">#FF0D47A1</color>
+    <color name="blue_87">#DE0D47A1</color>
+    <color name="blue_54">#890D47A1</color>
+    <color name="blue_26">#420D47A1</color>
+
 </resources>

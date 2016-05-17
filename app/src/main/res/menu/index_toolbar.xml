@@ -4,18 +4,18 @@
     <item
         android:id="@+id/action_search"
         android:title="搜索"
-        android:icon="@drawable/ic_search"
+        android:icon="@mipmap/icon_search_48"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_history"
         android:title="历史"
-        android:icon="@drawable/ic_history"
+        android:icon="@mipmap/icon_history_64"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_offline"
-        android:icon="@drawable/ic_history"
+        android:icon="@mipmap/icon_download_64"
         android:title="离线"
         app:showAsAction="ifRoom" />
 

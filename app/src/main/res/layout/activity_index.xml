@@ -5,45 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-       <RelativeLayout
+       <LinearLayout
+           android:id="@+id/ll_index_content_layout"
            android:layout_width="match_parent"
+           android:orientation="vertical"
            android:layout_height="match_parent">
-           <android.support.design.widget.AppBarLayout
-               android:id="@+id/appBar"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-               <android.support.v7.widget.Toolbar
-                   android:id="@+id/index_toolbar"
-                   android:layout_width="match_parent"
-                   app:title="@string/app_name"
-                   app:navigationIcon="@drawable/ic_menu"
-                   android:layout_height="?attr/actionBarSize">
-
-
-               </android.support.v7.widget.Toolbar>
-               
-                <android.support.design.widget.TabLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/index_tablayout"
-                    android:isScrollContainer="true"
-                    app:tabMinWidth="100dp"
-                    app:tabIndicatorColor="@android:color/holo_red_light"
-                    app:tabSelectedTextColor="@android:color/white"
-                    app:tabTextColor="@android:color/darker_gray"
-                    >
-
-                </android.support.design.widget.TabLayout>
-           </android.support.design.widget.AppBarLayout>
+           <include layout="@layout/layout_appbar"/>
            <android.support.v4.view.ViewPager
-               android:layout_below="@id/appBar"
                android:id="@+id/index_viewpager"
                android:layout_width="match_parent"
                android:layout_height="match_parent">
 
            </android.support.v4.view.ViewPager>
 
-       </RelativeLayout>
+       </LinearLayout>
 
 
    <android.support.design.widget.NavigationView
@@ -52,7 +27,7 @@
        android:layout_gravity="start"
        app:headerLayout="@layout/navigation_header"
        app:menu="@menu/navigation_menu"
-       android:background="#36383B"
+       android:background="@color/white_87"
        android:layout_height="match_parent">
 
    </android.support.design.widget.NavigationView>

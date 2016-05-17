@@ -1,5 +1,6 @@
 package fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -34,6 +35,7 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
 
     private HomeAdapter adapter = null;
     private List<HomeItem> dataList = null;
+
 
     @Nullable
     @Override
@@ -89,29 +91,10 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
     }
 
     private void initListener(){
-       mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+       mRecyclerView.addOnScrollListener(new HidingScrollListener(getActivity()) {
            @Override
-           public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-               switch (newState){
-                   case RecyclerView.SCROLL_STATE_IDLE:
-                       //停止滚动时
-                       break;
-                   case RecyclerView.SCROLL_STATE_SETTLING:
-                       //惯性滚动时
-                       break;
-                   case RecyclerView.SCROLL_STATE_DRAGGING:
-                       //在手滑动时
-                       break;
-               }
-           }
-
-           @Override
-           public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-               if(dy>10){
-                   ((IndexActivity)getActivity()).hideToolbar();
-               }else if(dy <10) {
-                   ((IndexActivity)getActivity()).showToolbar();
-               }
+           public void onMoved(int distance) {
+               ((IndexActivity)getActivity()).moveToolbar(distance);
            }
        });
 
@@ -134,6 +117,44 @@ public class HomeFragment extends BaseFragment implements HomeAdapter.ItemClickE
     @Override
     public void onContentViewClick(HomeItemContent item) {
 
+    }
+
+    private abstract class HidingScrollListener extends RecyclerView.OnScrollListener{
+        private int mToolbarOffset = 0;
+        private int mToolbarHeight;
+
+        public HidingScrollListener(Context context) {
+            super();
+            mToolbarHeight = (int)context.getResources().getDimension(android.support.design.R.dimen.abc_action_bar_default_height_material);
+
+        }
+
+        @Override
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            super.onScrollStateChanged(recyclerView, newState);
+
+
+        }
+
+        @Override
+        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+            clipToolbarOffset();
+            onMoved(mToolbarOffset);
+            if((mToolbarOffset <mToolbarHeight && dy>0) || (mToolbarOffset >0 && dy<0)) {
+                mToolbarOffset += dy;
+            }
+
+        }
+
+        private void clipToolbarOffset() {
+            if(mToolbarOffset > mToolbarHeight) {
+                mToolbarOffset = mToolbarHeight;
+            } else if(mToolbarOffset < 0) {
+                mToolbarOffset = 0;
+            }
+        }
+        public abstract void onMoved(int distance);
     }
 
 

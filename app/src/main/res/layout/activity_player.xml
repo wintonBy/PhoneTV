@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <include layout="@layout/layout_appbar"/>
     <!-- The main content view -->
     <FrameLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         <com.winton.player.widget.media.IjkVideoView
             android:id="@+id/video_view"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="250dp"
             android:layout_gravity="center">
 
         </com.winton.player.widget.media.IjkVideoView>
